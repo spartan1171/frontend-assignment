@@ -1,17 +1,21 @@
 {
-  "name": "vue-assignment",
+  "name": "frontend-assignment",
   "version": "1.0.0",
   "description": "![ ](https://imgs.xkcd.com/comics/code_quality_3.png)",
   "main": "index.js",
   "scripts": {
-    "start": "node src/server/app.js"
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "node src/server/app.js",
+    "client": "node start-client.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "concurrently": "^7.5.0",
     "csv-parse": "^4.0.1",
     "express": "^4.16.4",
-    "pug": "^2.0.3",
+    "prettier": "^2.7.1",
+    "pug": "^3.0.2",
     "ws": "^6.1.2"
   }
 }
