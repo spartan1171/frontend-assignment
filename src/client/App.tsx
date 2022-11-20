@@ -1,8 +1,9 @@
 import React, { FC } from 'react';
 import './App.css';
+import Dashboard from './pages/Dashboard/Dashboard';
 
 export const App: FC = () => (
   <div className="App">
-    <h1>Yo G!</h1>
+    <Dashboard />
   </div>
 );

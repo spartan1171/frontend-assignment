@@ -1,6 +1,45 @@
+# The solution
+
+I used the latest version of Reactjs with TypeScript for the assignment.
+
+---
+
+## Getting Started
+
+Clone repository:
+
+`git clone https://github.com/spartan1171/frontend-assignment.git`
+
+Enter the directory:
+
+`cd frontend-assignment`
+
+Install the backend related dependencies:
+
+`npm i`
+
+Enter the frontend folder:
+
+`cd src/client`
+
+Install the frontend related dependencies:
+
+`npm i`
+
+Go back to the root of the project:
+
+`cd ../..`
+
+Run the frontend and backend:
+
+`npm start`
+
+---
 
 # ChargePoint Frontend Assignment
+
 ---
+
 ![](https://imgs.xkcd.com/comics/self_description.png)
 
 This repository holds the ViriCiti Frontend assignment. In this project you will find the description regarding the assignment for you to do. This assignment represent what we do on a day to day basis. We receive raw data from vehicles store it on database then send it to browser app via web socket.
@@ -8,6 +47,7 @@ This repository holds the ViriCiti Frontend assignment. In this project you will
 ---
 
 ## Getting Started
+
 First of all, fork the repository at:
 
 `https://github.com/viriciti/frontend-assignment`
@@ -33,6 +73,7 @@ Run the app
 ---
 
 ## The Assignment
+
 We have provided you with a starter kit that broadcast vehicle data via web socket. You can find the HTTP server on `src/server/app.js`, it's a bare minimum setup containing an express server to serve HTML page and ws server that broadcast raw data. What you need to build is a front end application that should look like below:
 
 ![](https://github.com/viriciti/frontend-assignment/raw/master/sketch.png)
@@ -42,11 +83,15 @@ The whole front end application should be build with [React.js](https://reactjs.
 As you can see in this repository there are no webpack configuration and frontend server. You're free to create your own configuration, maybe you want different config for production and development.
 
 ### Get Creative!
+
 You can also extend the functionality for both front end and back end of the application. For example, making a more informative front end or incident for vehicle that went to fast on the road (this can be done both in the front end and back end, double points for back end implementation ;) )
+
 ### FE Framework!
+
 You can use the frontend framework that you want! (but preferably ReactJS or VueJS)
 
 ### The data
+
 On websocket stream the data should look like this:
 
 ```JS
@@ -60,23 +105,28 @@ On websocket stream the data should look like this:
 }
 ```
 
-* time - Unix timestamp of the moment the datapoint was recorder
-* energy - Energy used in kWh
-* gps - Latitude and longitude where the datapoint was recorded
-* odo - The distance driven in km
-* speed - The speed the vehicle was going in km/h
-* soc - The state of charge (battery) of the vehicle in %
+- time - Unix timestamp of the moment the datapoint was recorder
+- energy - Energy used in kWh
+- gps - Latitude and longitude where the datapoint was recorded
+- odo - The distance driven in km
+- speed - The speed the vehicle was going in km/h
+- soc - The state of charge (battery) of the vehicle in %
 
 ## Read up material
+
 Looking to level up your knowledge and skills? These are some good articles/courses that you can check out.
-* [Vue JS](https://vuejs.org/)
-* [ReactJS](https://reactjs.org/)
-* [Chartjs](https://www.chartjs.org/)
-* [Node.js WebSocket](https://flaviocopes.com/node-websockets/)
+
+- [Vue JS](https://vuejs.org/)
+- [ReactJS](https://reactjs.org/)
+- [Chartjs](https://www.chartjs.org/)
+- [Node.js WebSocket](https://flaviocopes.com/node-websockets/)
+
 ### General
-* Learn [Node.js and it's modules](http://nodeschool.io/#workshoppers)
+
+- Learn [Node.js and it's modules](http://nodeschool.io/#workshoppers)
 
 ## Questions
+
 If you have any questions about the assignment or project setup feel free to contact us at <a href='mailto:enrique.tamames@chargepoint.com'>enrique.tamames@chargepoint.com</a> or <a href='mailto:marco.vanharten@chargepoint.com'>marco.vanharten@chargepoint.com</a>. You can also come by the office. We're always ready to help.
 
 Good luck with the assignment!

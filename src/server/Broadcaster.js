@@ -1,7 +1,7 @@
-const EventEmitter = require("events").EventEmitter;
-const csvParse = require("csv-parse");
-const fs = require("fs");
-const Writable = require("stream").Writable;
+const EventEmitter = require('events').EventEmitter;
+const csvParse = require('csv-parse');
+const fs = require('fs');
+const Writable = require('stream').Writable;
 
 class Broadcaster extends EventEmitter {
   constructor() {
@@ -11,12 +11,12 @@ class Broadcaster extends EventEmitter {
   start() {
     this.broadcasting = true;
     const broadcast = () => {
-      console.log("Broadcasting...");
-      const fileStream = fs.createReadStream("./meta/route.csv");
+      console.log('Broadcasting...');
+      const fileStream = fs.createReadStream('./meta/route.csv');
 
       fileStream
         // Filestream piped to csvParse which accept nodejs readablestreams and parses each line to a JSON object
-        .pipe(csvParse({ delimiter: ",", columns: true, cast: true }))
+        .pipe(csvParse({ delimiter: ',', columns: true, cast: true }))
         // Then it is piped to a writable streams that will push it into nats
         .pipe(
           new Writable({
@@ -27,20 +27,20 @@ class Broadcaster extends EventEmitter {
               // setTimeout in this case is there to emulate real life situation
               // data that came out of the vehicle came in with irregular interval
               // Hence the Math.random() on the second parameter
-              setTimeout(() => {
-                this.emit("data", obj);
+              setTimeout(async () => {
+                this.emit('data', obj);
                 cb();
               }, Math.ceil(Math.random() * 150));
             },
           })
         )
-        .once("finish", () => {
-          console.log("Finished broadcasting");
+        .once('finish', () => {
+          console.log('Finished broadcasting');
           if (this.broadcasting) {
-            console.log("Re-broadcast");
+            console.log('Re-broadcast');
             broadcast();
           } else {
-            console.log("Stopped broadcast");
+            console.log('Stopped broadcast');
             return;
           }
         });
