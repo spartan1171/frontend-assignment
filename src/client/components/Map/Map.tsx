@@ -1,7 +1,7 @@
 import React, { FC, useCallback, useState, memo, useEffect } from 'react';
 import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
 
-const GOOGLE_MAPS_API_KEY = 'AIzaSyAc5wLk0_9ouUSuw5Q8CtSoS6rRjZAiAoA';
+const GOOGLE_MAPS_API_KEY = 'GOOGLE_API_KEY';
 
 interface MapProps {
   center?: google.maps.LatLngLiteral;

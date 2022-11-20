@@ -36,6 +36,13 @@ Run the frontend and backend:
 
 ---
 
+###
+
+In order for the Google Map instance to work yo will need an API key. For security reasons I could not include mine.
+You will need to replace string `GOOGLE_API_KEY` in `src/client/components/Map/Map.tsx with a working Google Api Key.
+
+---
+
 # ChargePoint Frontend Assignment
 
 ---
