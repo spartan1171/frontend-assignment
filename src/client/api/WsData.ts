@@ -4,6 +4,7 @@ type WsData = {
   gps: string;
   odo: number;
   speed: number;
+  speedlimit: number;
   soc: number;
 };
 

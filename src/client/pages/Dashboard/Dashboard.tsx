@@ -151,7 +151,10 @@ const Dashboard: FC = () => {
               title="Speed Profile"
               yAxisTitle="Speed"
               xAxisTitle="Time"
-              data={getDataSetFromWsData('speed', { r: 53, g: 162, b: 235 })}
+              data={[
+                getDataSetFromWsData('speed', { r: 53, g: 162, b: 235 }),
+                getDataSetFromWsData('speedlimit', { r: 255, g: 0, b: 0 }),
+              ]}
             />
           </GridItem>
           <GridItem size={12}>
@@ -159,7 +162,7 @@ const Dashboard: FC = () => {
               title="State of Charge Profile"
               yAxisTitle="Soc"
               xAxisTitle="Time"
-              data={getDataSetFromWsData('soc', { r: 235, g: 25, b: 53 })}
+              data={[getDataSetFromWsData('soc', { r: 235, g: 25, b: 53 })]}
             />
           </GridItem>
         </GridContainer>

@@ -40,7 +40,7 @@ interface LineChartProps {
   title: string;
   yAxisTitle: string;
   xAxisTitle: string;
-  data: ChartData;
+  data: ChartData[];
 }
 
 const LineChart: FC<LineChartProps> = (props: LineChartProps) => {
@@ -67,7 +67,7 @@ const LineChart: FC<LineChartProps> = (props: LineChartProps) => {
     },
   };
 
-  return <StyledLine data={{ datasets: [data] }} options={options} />;
+  return <StyledLine data={{ datasets: data }} options={options} />;
 };
 
 export default LineChart;

@@ -2,10 +2,15 @@ const EventEmitter = require('events').EventEmitter;
 const csvParse = require('csv-parse');
 const fs = require('fs');
 const Writable = require('stream').Writable;
+const Speedlimit = require('./Speedlimit');
 
 class Broadcaster extends EventEmitter {
+  speedlimit;
+
   constructor() {
     super();
+
+    this.speedlimit = new Speedlimit();
   }
 
   start() {
@@ -28,7 +33,14 @@ class Broadcaster extends EventEmitter {
               // data that came out of the vehicle came in with irregular interval
               // Hence the Math.random() on the second parameter
               setTimeout(async () => {
-                this.emit('data', obj);
+                const currentSpeedlimit =
+                  this.speedlimit.getCurrentSpeedlimit();
+                const objWithSpeedlimit = {
+                  ...obj,
+                  speedlimit: currentSpeedlimit,
+                };
+
+                this.emit('data', objWithSpeedlimit);
                 cb();
               }, Math.ceil(Math.random() * 150));
             },
