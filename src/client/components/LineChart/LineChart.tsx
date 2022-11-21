@@ -33,6 +33,7 @@ export type ChartData = {
 };
 
 const StyledLine = styled(Line)`
+  width: 100%;
   height: 450px;
 `;
 
